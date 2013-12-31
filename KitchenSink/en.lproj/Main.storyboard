@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4vZ-s2-aI5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Kitchen Sink View Controller-->
+        <scene sceneID="YQ1-Kv-nvY">
+            <objects>
+                <viewController id="4vZ-s2-aI5" customClass="KitchenSinkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1eP-oJ-ZYg"/>
+                        <viewControllerLayoutGuide type="bottom" id="MJw-8r-QTX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qy6-FD-zDU">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-VH-KdH">
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Add food" id="gKm-Yq-Lnh">
+                                        <connections>
+                                            <segue destination="gY3-O8-P9q" kind="modal" identifier="Ask" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="73I-TD-VSL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yCF-x5-1LW"/>
+                                    <barButtonItem title="Add photo" id="LfI-8f-PVC">
+                                        <connections>
+                                            <action selector="addFoodPhoto:" destination="4vZ-s2-aI5" id="TKt-N3-oFq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Take photo" id="m4E-wl-ZC1">
+                                        <connections>
+                                            <action selector="takeFoodPhoto:" destination="4vZ-s2-aI5" id="ww8-W8-oWd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Choose sink" id="D7M-Rq-MF6">
+                                        <connections>
+                                            <action selector="controlSink:" destination="4vZ-s2-aI5" id="km6-eG-K6M"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qd9-TE-nx0">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dp7-xn-AAL" appends="YES" id="cfm-cA-5SD"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Qd9-TE-nx0" secondAttribute="trailing" id="1mJ-bx-D4d"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ju-VH-KdH" secondAttribute="trailing" id="20k-rx-PrM"/>
+                            <constraint firstItem="4Ju-VH-KdH" firstAttribute="top" secondItem="1eP-oJ-ZYg" secondAttribute="bottom" id="4cd-Gb-Cro"/>
+                            <constraint firstItem="Qd9-TE-nx0" firstAttribute="top" secondItem="4Ju-VH-KdH" secondAttribute="bottom" id="6eX-PQ-PzL"/>
+                            <constraint firstItem="Qd9-TE-nx0" firstAttribute="leading" secondItem="qy6-FD-zDU" secondAttribute="leading" id="Jm7-Eg-LaZ"/>
+                            <constraint firstItem="MJw-8r-QTX" firstAttribute="top" secondItem="Qd9-TE-nx0" secondAttribute="bottom" id="Ke9-5i-0dJ"/>
+                            <constraint firstItem="4Ju-VH-KdH" firstAttribute="leading" secondItem="qy6-FD-zDU" secondAttribute="leading" id="pUg-Md-Mnh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kitchenSink" destination="Qd9-TE-nx0" id="J0i-9X-a18"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s8n-CP-Llx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dp7-xn-AAL">
+                    <connections>
+                        <action selector="tap:" destination="4vZ-s2-aI5" id="M7F-Ba-xxD"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-311" y="-621"/>
+        </scene>
+        <!--Asker View Controller-->
+        <scene sceneID="LZH-dU-7Pn">
+            <objects>
+                <viewController id="gY3-O8-P9q" customClass="AskerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3H-iT-1PR"/>
+                        <viewControllerLayoutGuide type="bottom" id="iCr-LQ-vdI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ba5-YO-PoY">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ro-py-rJK">
+                                <rect key="frame" x="20" y="370" width="728" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-PM-Bso">
+                                <rect key="frame" x="20" y="442" width="728" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20Y-fO-a9w">
+                                <rect key="frame" x="655" y="480" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qud-0Z-uZ0" kind="unwind" unwindAction="cancleAsking:" id="OMP-pz-QIV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVu-Ss-aSg">
+                                <rect key="frame" x="711" y="480" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qud-0Z-uZ0" kind="unwind" unwindAction="doneAsking:" id="y6F-Ex-hS8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z1X-IT-Sl1"/>
+                    <connections>
+                        <outlet property="answareTextField" destination="QBs-PM-Bso" id="DIC-S4-of6"/>
+                        <outlet property="questionLabel" destination="3ro-py-rJK" id="mQS-ud-fVC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfX-s9-Ja8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qud-0Z-uZ0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="627" y="-621"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

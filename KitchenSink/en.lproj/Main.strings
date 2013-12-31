@@ -1,0 +1,21 @@
+
+/* Class = "IBUIButton"; normalTitle = "Cancle"; ObjectID = "20Y-fO-a9w"; */
+"20Y-fO-a9w.normalTitle" = "Cancle";
+
+/* Class = "IBUILabel"; text = "Question"; ObjectID = "3ro-py-rJK"; */
+"3ro-py-rJK.text" = "Question";
+
+/* Class = "IBUIBarButtonItem"; title = "Choose sink"; ObjectID = "D7M-Rq-MF6"; */
+"D7M-Rq-MF6.title" = "Choose sink";
+
+/* Class = "IBUIBarButtonItem"; title = "Add photo"; ObjectID = "LfI-8f-PVC"; */
+"LfI-8f-PVC.title" = "Add photo";
+
+/* Class = "IBUIButton"; normalTitle = "Done"; ObjectID = "NVu-Ss-aSg"; */
+"NVu-Ss-aSg.normalTitle" = "Done";
+
+/* Class = "IBUIBarButtonItem"; title = "Add food"; ObjectID = "gKm-Yq-Lnh"; */
+"gKm-Yq-Lnh.title" = "Add food";
+
+/* Class = "IBUIBarButtonItem"; title = "Take photo"; ObjectID = "m4E-wl-ZC1"; */
+"m4E-wl-ZC1.title" = "Take photo";
